@@ -86,7 +86,7 @@
         <p>title: element-ui踩坑点<br>date: 2023-02-10 10:00:37<br>tags:</p>
 <p>本文主要整理element-ui踩坑点<br>注：文章内容相对而言有一定的难度，所以需要读者有一定的基础。另外，若文章有何不妥之处或者你有任何疑问，欢迎留言讨论。 </p>
 <h1 id="一、组件样式"><a href="#一、组件样式" class="headerlink" title="一、组件样式"></a>一、组件样式</h1><p>饿了么组件库中有需求改组件样式的坑点，有很细心的前端小伙伴用控制台来选择元素，选择到需要更改的元素的时候已经看见这个元素使用的class，但在我们代码中用这个class名有时候写上却无法修改该元素的样式</p>
-<p><img src="https://raw.githubusercontent.com/770746548/770746548.github.io/master/images/image-20230210155715506.png" alt="image-20230210155715506"></p>
+<p><img src="https://raw.githubusercontent.com/770746548/770746548.github.io/master/images/image-20230210162443277.png" alt="image-20230210162443277"></p>
 <p>首先，我们复制该元素class名为 .el-table_3_column_8 is-center  .el-table__cell</p>
 <p>此时，我们直接用这个样式写上去无法生效，则我们可以采用以下深度选择器进行修改样式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">::v-deep .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br><span class="line">/deep/ .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldy9gmtk000210mh23dx8sjt" data-title="" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldy9jndd0002domhh6dk5vz2" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -178,7 +178,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldy9gmtb000010mh72za8hsz" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldy9jnd70000domhag1oftt8" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
       
       
       
@@ -218,7 +218,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldy9gmth000110mh4myzafhl" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldy9jndc0001domhgylxe9p4" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
       
       
       
@@ -715,7 +715,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldy9gmux000310mh61vu2xhg" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldy9jnem0003domhbeg02xeu" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
       
       
       
