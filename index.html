@@ -71,89 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Vue脚手架安装流程详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2023-02-10T03:55:37.927Z" itemprop="datePublished">2023-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">Vue脚手架安装流程详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <div id="article_content" class="article_content clearfix">
-        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-163de54645.css">
-                <div id="content_views" class="markdown_views prism-atom-one-light">
-<h6><a id="vue_1"></a>这次写的是关于vue框架开发的一些流程，如有错误，请大佬们指正！在此表示感谢！</h6> 
-<h3><a name="t1"></a><a id="1_2"></a>1.安装</h3> 
-<ul><li>cnpm/npm i @vue/cli -g 这里cnpm是指用淘宝源，因为下载速度更快 下载vue的脚手架</li></ul> 
-<h3><a name="t2"></a><a id="2_4"></a>2.创建项目</h3> 
-<ul><li>vue create 项目名称 在终端创建项目</li><li>选择 （可以根据自己的码代码的风格选用大部分人会带上eslint代码规范工具）<br> 优雅降级<br> css预处理器<br> ts<br> vue版本</li></ul> 
-<h3><a name="t3"></a><a id="3_11"></a>3.启动项目</h3> 
-<ul><li>启动项目 yarn serve / npm run serve (这里我要说yarn和npm都是包管理工具，但是yarn是最新的，经过重新设计的npm客户端，它的下载和安装速度比npm快了一点点，当然要先下载cnpm/npm i yarn -g)</li><li>yarn和npm主要区别</li><li>1.yarn不需要互联网连接就能安装本地缓存的依赖项，提供了离线模式，npm没有</li><li>2.yarn更加简洁，能更加直观打印重要的信息，还有语义清晰</li></ul> 
-<h3><a name="t4"></a><a id="4_16"></a>4.使用项目</h3> 
-<ul><li>1.组件导入<br> import Hello from ‘相对路径’<br> 通过components注册</li><li>2.style 
-  <ul><li>css<br> less<br> scss<br> stylus<br> “scoped规定样式作用范围的”<br><b>ps：三种都是当下主流，小公司更喜欢使用less因为安装简单，使用简单，大公司使用scss和stylus，本人公司大多数情况下使用的是scss，scss其实也挺不错的，结构也容易懂。但stylus更好一些，因为它是集所有css  scss sass less优点集一身的，所以我打算业余的时候要多用它，熟悉一下。加油！</b></li></ul> </li><li>3.解决数据请求跨域问题（这个问题涉及优点广，作者挑实用的讲）<br> 1.在vue.config.js/devServer/proxy配置<pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">devServer&#123;
-proxy: &#123;
-    '/ajax': &#123;
-        target: '目标网址'，
-        changeOrigin: true   
-    &#125;
-&#125;
-<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code></pre> </li></ul> 
-<p>}<br> 上是统一域名的情况下<br> 不统一域名用下面<br> 2.devServer{<!-- --><br> proxy: {<!-- --><br> ‘/api’: {<!-- --><br> target: ‘目标网址’，<br> changeOrigin: true,<br> pathRewrite: {<!-- --><br> ‘^/api’: ‘’<br> }<br> }<br> }<br> }<br> 
-
-</p> 
-<h3><a name="t5"></a><a id="5_52"></a>5.各个文件取名以及作用</h3> 
-<ul><li>src/pages | src/views | src/routes 展示页面<br> - src/utils 公共函数封装库<br> - src/interface ts定义的类型<br> - src/router 路由 — 页面跳转<br> - src/store 数据存储和管理的目录<br> - src/components 公共组件<br> - src/assets 静态资源文件夹<br> - fonts 字体包<br> - img 静态图片</li></ul> 
-<h3><a name="t6"></a><a id="6_62"></a>6.进行移动端配置</h3> 
-<ul><li>移动端兼容：添加meta标签</li></ul> 
-<pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">       - [参考文档](https://blog.csdn.net/yc123h/article/details/51356143)
-       - 移动端禁用： 双指缩放
-&lt;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /&gt;
-  - 移动端自适应
-        - 方案
-        - 手动计算rem
-        - flex + rem 
-        - 设计稿--&gt; px ---- 移动端的rem 
-        -  插件 px2rem  好用
-        - http://www.dsiab.com/1601850633375
-        - 去除浏览器默认样式
-        - assets/style/reset.scss 
-        - 在 app.vue/style中引入reset.scss 
-<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code></pre> 
-<h3><a name="t7"></a><a id="_80"></a>以上就是今日的分享了，望各位前端兄弟们加油呀~</h3>
-                </div><div><div></div></div>
-                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-3fd7f7a902.css" rel="stylesheet">
-                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-49037e4d27.css" rel="stylesheet">
-        </div>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldyax8jm0000tomhcxvr6xge" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-前端中高级知识要点总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" class="article-date">
@@ -639,7 +556,90 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldyax8lg0003tomh1cqze6k0" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldyazm9p000374mhepv09k43" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Vue脚手架安装流程详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2023-02-10T01:10:37.000Z" itemprop="datePublished">2023-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">Vue脚手架安装流程详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-163de54645.css">
+                <div id="content_views" class="markdown_views prism-atom-one-light">
+<h6><a id="vue_1"></a>这次写的是关于vue框架开发的一些流程，如有错误，请大佬们指正！在此表示感谢！</h6> 
+<h3><a name="t1"></a><a id="1_2"></a>1.安装</h3> 
+<ul><li>cnpm/npm i @vue/cli -g 这里cnpm是指用淘宝源，因为下载速度更快 下载vue的脚手架</li></ul> 
+<h3><a name="t2"></a><a id="2_4"></a>2.创建项目</h3> 
+<ul><li>vue create 项目名称 在终端创建项目</li><li>选择 （可以根据自己的码代码的风格选用大部分人会带上eslint代码规范工具）<br> 优雅降级<br> css预处理器<br> ts<br> vue版本</li></ul> 
+<h3><a name="t3"></a><a id="3_11"></a>3.启动项目</h3> 
+<ul><li>启动项目 yarn serve / npm run serve (这里我要说yarn和npm都是包管理工具，但是yarn是最新的，经过重新设计的npm客户端，它的下载和安装速度比npm快了一点点，当然要先下载cnpm/npm i yarn -g)</li><li>yarn和npm主要区别</li><li>1.yarn不需要互联网连接就能安装本地缓存的依赖项，提供了离线模式，npm没有</li><li>2.yarn更加简洁，能更加直观打印重要的信息，还有语义清晰</li></ul> 
+<h3><a name="t4"></a><a id="4_16"></a>4.使用项目</h3> 
+<ul><li>1.组件导入<br> import Hello from ‘相对路径’<br> 通过components注册</li><li>2.style 
+  <ul><li>css<br> less<br> scss<br> stylus<br> “scoped规定样式作用范围的”<br><b>ps：三种都是当下主流，小公司更喜欢使用less因为安装简单，使用简单，大公司使用scss和stylus，本人公司大多数情况下使用的是scss，scss其实也挺不错的，结构也容易懂。但stylus更好一些，因为它是集所有css  scss sass less优点集一身的，所以我打算业余的时候要多用它，熟悉一下。加油！</b></li></ul> </li><li>3.解决数据请求跨域问题（这个问题涉及优点广，作者挑实用的讲）<br> 1.在vue.config.js/devServer/proxy配置<pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">devServer&#123;
+proxy: &#123;
+    '/ajax': &#123;
+        target: '目标网址'，
+        changeOrigin: true   
+    &#125;
+&#125;
+<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code></pre> </li></ul> 
+<p>}<br> 上是统一域名的情况下<br> 不统一域名用下面<br> 2.devServer{<!-- --><br> proxy: {<!-- --><br> ‘/api’: {<!-- --><br> target: ‘目标网址’，<br> changeOrigin: true,<br> pathRewrite: {<!-- --><br> ‘^/api’: ‘’<br> }<br> }<br> }<br> }<br> 
+
+</p> 
+<h3><a name="t5"></a><a id="5_52"></a>5.各个文件取名以及作用</h3> 
+<ul><li>src/pages | src/views | src/routes 展示页面<br> - src/utils 公共函数封装库<br> - src/interface ts定义的类型<br> - src/router 路由 — 页面跳转<br> - src/store 数据存储和管理的目录<br> - src/components 公共组件<br> - src/assets 静态资源文件夹<br> - fonts 字体包<br> - img 静态图片</li></ul> 
+<h3><a name="t6"></a><a id="6_62"></a>6.进行移动端配置</h3> 
+<ul><li>移动端兼容：添加meta标签</li></ul> 
+<pre class="prettyprint"><code class="has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">       - [参考文档](https://blog.csdn.net/yc123h/article/details/51356143)
+       - 移动端禁用： 双指缩放
+&lt;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /&gt;
+  - 移动端自适应
+        - 方案
+        - 手动计算rem
+        - flex + rem 
+        - 设计稿--&gt; px ---- 移动端的rem 
+        -  插件 px2rem  好用
+        - http://www.dsiab.com/1601850633375
+        - 去除浏览器默认样式
+        - assets/style/reset.scss 
+        - 在 app.vue/style中引入reset.scss 
+<div class="hljs-button &#123;2&#125;" data-title="复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code></pre> 
+<h3><a name="t7"></a><a id="_80"></a>以上就是今日的分享了，望各位前端兄弟们加油呀~</h3>
+                </div><div><div></div></div>
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-3fd7f7a902.css" rel="stylesheet">
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-49037e4d27.css" rel="stylesheet">
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldyazm89000074mhb8k6ecis" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
       
       
       
@@ -679,7 +679,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldyax8jr0001tomh9bwf1rwx" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldyazm8f000174mhgphhfi3h" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
       
       
       
@@ -724,7 +724,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldyax8jt0002tomhc17ob31v" data-title="element-ui踩坑点" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldyazm8i000274mhd8g2gh6t" data-title="element-ui踩坑点" class="article-share-link">Share</a>
       
       
       
@@ -767,11 +767,11 @@ proxy: &#123;
       <ul>
         
           <li>
-            <a href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">Vue脚手架安装流程详解</a>
+            <a href="/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/">前端中高级知识要点总结</a>
           </li>
         
           <li>
-            <a href="/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/">前端中高级知识要点总结</a>
+            <a href="/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">Vue脚手架安装流程详解</a>
           </li>
         
           <li>
