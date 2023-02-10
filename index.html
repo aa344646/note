@@ -142,7 +142,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldya56gc0000l8mh4dzcdzku" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/" data-id="cldyaiaej0000mwmhc05afwaf" data-title="Vue脚手架安装流程详解" class="article-share-link">Share</a>
       
       
       
@@ -182,52 +182,7 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldya56gh0001l8mhclxg5ocr" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-饿了么组件库踩坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" class="article-date">
-  <time class="dt-published" datetime="2023-02-10T02:00:37.000Z" itemprop="datePublished">2023-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/">element-ui踩坑点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本文主要整理element-ui踩坑点<br>注：文章内容相对而言有一定的难度，所以需要读者有一定的基础。另外，若文章有何不妥之处或者你有任何疑问，欢迎留言讨论。 </p>
-<h1 id="一、组件样式"><a href="#一、组件样式" class="headerlink" title="一、组件样式"></a>一、组件样式</h1><p>饿了么组件库中有需求改组件样式的坑点，有很细心的前端小伙伴用控制台来选择元素，选择到需要更改的元素的时候已经看见这个元素使用的class，但在我们代码中用这个class名有时候写上却无法修改该元素的样式</p>
-<p><img src="https://raw.githubusercontent.com/770746548/770746548.github.io/master/images/image-20230210162443277.png" alt="image-20230210162443277"></p>
-<p>首先，我们复制该元素class名为 .el-table_3_column_8 is-center  .el-table__cell</p>
-<p>此时，我们直接用这个样式写上去无法生效，则我们可以采用以下深度选择器进行修改样式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">::v-deep .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br><span class="line">/deep/ .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldya56gj0002l8mhb3vy87jq" data-title="element-ui踩坑点" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="cldyaiaep0001mwmh6f4q8l6x" data-title="2023-02-10个人博客诞生了" class="article-share-link">Share</a>
       
       
       
@@ -724,7 +679,52 @@ proxy: &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldya56hu0003l8mhgk8l9rfw" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
+      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/" data-id="cldyaiag20003mwmhf2l53wzv" data-title="前端中高级知识要点总结" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-饿了么组件库踩坑" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" class="article-date">
+  <time class="dt-published" datetime="2022-01-10T02:00:37.000Z" itemprop="datePublished">2022-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/">element-ui踩坑点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文主要整理element-ui踩坑点<br>注：文章内容相对而言有一定的难度，所以需要读者有一定的基础。另外，若文章有何不妥之处或者你有任何疑问，欢迎留言讨论。 </p>
+<h1 id="一、组件样式"><a href="#一、组件样式" class="headerlink" title="一、组件样式"></a>一、组件样式</h1><p>饿了么组件库中有需求改组件样式的坑点，有很细心的前端小伙伴用控制台来选择元素，选择到需要更改的元素的时候已经看见这个元素使用的class，但在我们代码中用这个class名有时候写上却无法修改该元素的样式</p>
+<p><img src="https://raw.githubusercontent.com/770746548/770746548.github.io/master/images/image-20230210162443277.png" alt="image-20230210162443277"></p>
+<p>首先，我们复制该元素class名为 .el-table_3_column_8 is-center  .el-table__cell</p>
+<p>此时，我们直接用这个样式写上去无法生效，则我们可以采用以下深度选择器进行修改样式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">::v-deep .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br><span class="line">/deep/ .<span class="property">el</span>-table_3_column_8 is-center  .<span class="property">el</span>-table__cell&#123;<span class="comment">//第一种方法::v-deep</span></span><br><span class="line">    <span class="comment">//写上你要更改的样式</span></span><br><span class="line">    <span class="attr">boder</span>:1px soild red;<span class="comment">//将单元格的边框设为1px实线红色，这样我们就修改完成了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/770746548/770746548.github.io/2022/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/" data-id="cldyaiaes0002mwmhf9c5dy9w" data-title="element-ui踩坑点" class="article-share-link">Share</a>
       
       
       
@@ -754,7 +754,7 @@ proxy: &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li></ul>
     </div>
   </div>
 
@@ -775,11 +775,11 @@ proxy: &#123;
           </li>
         
           <li>
-            <a href="/2023/02/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/">element-ui踩坑点</a>
+            <a href="/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/">前端中高级知识要点总结</a>
           </li>
         
           <li>
-            <a href="/2023/02/10/%E5%89%8D%E7%AB%AF%E4%B8%AD%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93/">前端中高级知识要点总结</a>
+            <a href="/2022/01/10/%E9%A5%BF%E4%BA%86%E4%B9%88%E7%BB%84%E4%BB%B6%E5%BA%93%E8%B8%A9%E5%9D%91/">element-ui踩坑点</a>
           </li>
         
       </ul>
