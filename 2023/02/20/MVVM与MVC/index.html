@@ -6,17 +6,17 @@
   
   <title>前端基础-MVVM设计思想 | 小俊的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）">
+  <meta name="description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM） MVVM值得用么？个人非常推荐使">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端基础-MVVM设计思想">
-<meta property="og:url" content="https://github.com/770746548/770746548.github.io/2023/02/20/MVVM%E4%B8%8EMVC/index.html">
+<meta property="og:url" content="https://xjxjxj123.gitee.io/xiaojun-personal-blog/2023/02/20/MVVM%E4%B8%8EMVC/index.html">
 <meta property="og:site_name" content="小俊的个人博客">
-<meta property="og:description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）">
+<meta property="og:description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM） MVVM值得用么？个人非常推荐使">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s2.51cto.com/images/blog/202112/31160227_61ceb91369e2c41841.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184">
 <meta property="og:image" content="https://s2.51cto.com/images/blog/202112/31160228_61ceb914239d523806.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184">
 <meta property="article:published_time" content="2023-02-20T05:56:00.000Z">
-<meta property="article:modified_time" content="2023-02-20T05:59:58.740Z">
+<meta property="article:modified_time" content="2023-02-20T06:07:59.200Z">
 <meta property="article:author" content="小俊">
 <meta property="article:tag" content="前端基础">
 <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/770746548/770746548.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xjxjxj123.gitee.io/xiaojun-personal-blog"></form>
       </div>
     </div>
   </div>
@@ -107,11 +107,22 @@
 <p>V: Views 视图层 渲染数据</p>
 <p>VM：ViewsModel 视图模型层 调用数据渲染视图</p>
 <p> 由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）<img src="https://s2.51cto.com/images/blog/202112/31160228_61ceb914239d523806.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_30,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=/format,webp/resize,m_fixed,w_1184" style="visibility: visible; width: 100%; height: 1490px;" alt="前端基础-MVVM设计思想_数据_02"></p>
+<h2 id="MVVM值得用么？"><a href="#MVVM值得用么？" class="headerlink" title="MVVM值得用么？"></a>MVVM值得用么？</h2><p><strong>个人非常推荐使用</strong>，并且可以直接在你现有的MVC基础上进行扩展，我们首先来看下优缺点</p>
+<p>优点：</p>
+<p>​    1.Controller清晰简洁： ViewModel分离了大部分Controller代码，更加清晰和容易维护。</p>
+<p>​    2.方便测试：开发中大部分Bug来至于逻辑处理，由于ViewModel分离了许多逻辑，可以对ViewModel构造单元测试。</p>
+<p>​    3.开发解耦(举两个例子)：</p>
+<p>​        a.一人负责逻辑实现、另一人负责UI实现；</p>
+<p>​        b.敏捷开发时，会发经常发不是等后端做好了接口我们再去开发，不过在没有接口的情况下通常我们可以把Controller和View完成。</p>
+<p>缺点：</p>
+<p>​    1.看起来代码会比MVC多点</p>
+<p>​    2.需要对每个Controller实现绑定，如果处理不好，反而会有一种“画虎不成反类犬”的感觉</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在我实际使用过程中，MVVM写出的代码量并不比MVC的少，有时反而还会多点，毕竟多了一个数据绑定过程，但逻辑会清晰很多，对于多人开发的团队，还是有不少优势的，缺点和优点相比不值一提，总之<strong>推荐使用</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/770746548/770746548.github.io/2023/02/20/MVVM%E4%B8%8EMVC/" data-id="cleceura70001pomhgc9khpws" data-title="前端基础-MVVM设计思想" class="article-share-link">Share</a>
+      <a data-url="https://xjxjxj123.gitee.io/xiaojun-personal-blog/2023/02/20/MVVM%E4%B8%8EMVC/" data-id="clefi8i3s0002m0mhb6jlbcpl" data-title="前端基础-MVVM设计思想" class="article-share-link">Share</a>
       
       
       
