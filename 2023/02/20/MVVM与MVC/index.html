@@ -6,17 +6,17 @@
   
   <title>前端基础-MVVM设计思想 | 小俊的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM） MVVM值得用么？个人非常推荐使">
+  <meta name="description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）  MVVM值得用么？个人非常推荐">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端基础-MVVM设计思想">
 <meta property="og:url" content="https://xjxjxj123.gitee.io/xiaojun-personal-blog/2023/02/20/MVVM%E4%B8%8EMVC/index.html">
 <meta property="og:site_name" content="小俊的个人博客">
-<meta property="og:description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM） MVVM值得用么？个人非常推荐使">
+<meta property="og:description" content="MVC 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 C: controller 控制层 调用数据渲染视图MVVM 设计思想： M: model 数据模型层 提供数据 V: Views 视图层 渲染数据 VM：ViewsModel 视图模型层 调用数据渲染视图  由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）  MVVM值得用么？个人非常推荐">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200326142457679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUyODI2Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://gitee.com/xjxjxj123/xiaojun-personal-blog/raw/master/images/20200326142442911.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200326142442911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUyODI2Ng==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2023-02-20T05:56:00.000Z">
-<meta property="article:modified_time" content="2023-02-23T02:49:25.969Z">
+<meta property="article:modified_time" content="2023-02-23T02:52:20.856Z">
 <meta property="article:author" content="小俊">
 <meta property="article:tag" content="前端基础">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,8 @@
 <p>M: model 数据模型层 提供数据</p>
 <p>V: Views 视图层 渲染数据</p>
 <p>VM：ViewsModel 视图模型层 调用数据渲染视图</p>
-<p> 由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）<img src="https://gitee.com/xjxjxj123/xiaojun-personal-blog/raw/master/images/20200326142442911.png" alt="在这里插入图片描述"></p>
+<p> 由数据来驱动视图（不需要过多考虑dom操作，把重心放在VM）</p>
+<p><img src="https://img-blog.csdnimg.cn/20200326142442911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUyODI2Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="MVVM值得用么？"><a href="#MVVM值得用么？" class="headerlink" title="MVVM值得用么？"></a>MVVM值得用么？</h2><p><strong>个人非常推荐使用</strong>，并且可以直接在你现有的MVC基础上进行扩展，我们首先来看下优缺点</p>
 <p>优点：</p>
 <p>​    1.Controller清晰简洁： ViewModel分离了大部分Controller代码，更加清晰和容易维护。</p>
@@ -122,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xjxjxj123.gitee.io/xiaojun-personal-blog/2023/02/20/MVVM%E4%B8%8EMVC/" data-id="clegiacu7000178mh847550qu" data-title="前端基础-MVVM设计思想" class="article-share-link">Share</a>
+      <a data-url="https://xjxjxj123.gitee.io/xiaojun-personal-blog/2023/02/20/MVVM%E4%B8%8EMVC/" data-id="clegie2ou0001somhe8tk1sxo" data-title="前端基础-MVVM设计思想" class="article-share-link">Share</a>
       
       
       
